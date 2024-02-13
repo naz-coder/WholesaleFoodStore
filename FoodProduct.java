@@ -1,50 +1,82 @@
+package StoreInventory;
+
 public class FoodProduct {
 
- int foodID;
- String productSKU; //stock keeping unit (a unique code for each product)
- String description;
- String productCategory;
- int price;
+ private int id;
+ private String name;
+ private String SKU; //stock keeping unit (a unique code for each product)
+ private String desc;
+ private String cat;
+ private int price;
 
-// Constructors
- public FoodProduct(int id, String prdtSKU, String desc, String category, int prdtPrice) {
-// insert code here to assign attributes.
-  this.foodID = id;
-  this.productSKU = prdtSKU;
-  this.description = desc;
-  this.productCategory = category;
-  this.price = prdtPrice;
-}
+    public FoodProduct(int id, String name, String SKU, String desc, String cat, int price) {
+        this.id = id;
+        this.name = name;
+        this.SKU = SKU;
+        this.desc = desc;
+        this.cat = cat;
+        this.price = price;
+    }
 
-// Product Getters
- public int getFoodID(){
-  return foodID;
-}
- public String getProductSKU(){
-  return productSKU;
- }
- public String getDescription(){
-  return description;
- }
- public String getProductCategory(){
-  return productCategory;
- }
- public int getPrice(){
-  return  price;
- }
+  public FoodProduct( String name, String SKU, String desc, String cat, int price) {
+        this.name = name;
+        this.SKU = SKU;
+        this.desc = desc;
+        this.cat = cat;
+        this.price = price;
+    }    
+    
+    public int getId() {
+        return id;
+    }
 
-// Product Setters
- public void setProductSKU(String value){
-  this.productSKU = value;
- }
- public void setDescription(String value){
-  this.description = value;
- }
- public void setProductCategory(String value){
-  this.productCategory = value;
- }
- public void setPrice(int value){
-  this.price = value;
- }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSKU() {
+        return SKU;
+    }
+
+    public void setSKU(String SKU) {
+        this.SKU = SKU;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getCat() {
+        return cat;
+    }
+
+    public void setCat(String cat) {
+        this.cat = cat;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String toHTMLString(){
+        return "<tr><td>" + id + "</td><td> " + name + "</td><td> " + SKU + "</td><td> " + desc + "</td><td> " + cat + "</td><td> " + price +
+                "</td></tr>";
+    }
 
 }
